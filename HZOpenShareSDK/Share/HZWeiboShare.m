@@ -92,9 +92,9 @@
    return [[self shareIntance]sendMessage:shareObject shareMessageFrom:from];
 }
 
-+ (BOOL)registerApp:(NSString *)appKer redirectURL:(NSString *)url
++ (BOOL)registerApp:(NSString *)appKey redirectURL:(NSString *)url
 {
-    return [[self shareIntance]registerApp:appKer url:url];
+    return [[self shareIntance]registerApp:appKey url:url];
 }
 
 - (BOOL)handleOpenURl:(NSURL *)url
@@ -118,7 +118,7 @@
     return flag;
 }
 
-id creatMediaObject(NSString *className)
+id creatWeiboMediaObject(NSString *className)
 {
     Class  class = NSClassFromString(className);
     SEL selector = NSSelectorFromString(@"object");
@@ -140,21 +140,21 @@ id createMessage(HZShareObject *shareObject)
     if (shareObject.messageType == HZShareMessageText) {
         [message setValue:shareObject.text forKey:@"text"];
     } else if (shareObject.messageType == HZShareMessageImage || shareObject.messageType == HZShareMessageGifImage) {
-        id ext = creatMediaObject(@"WBImageObject");
+        id ext = creatWeiboMediaObject(@"WBImageObject");
         [ext setValue:shareObject.data forKey:@"imageData"];
         [message setValue:ext forKey:@"imageObject"];
     } else if (shareObject.messageType == HZShareMessageWebpage) {
-        id ext = creatMediaObject(@"WBWebpageObject");
+        id ext = creatWeiboMediaObject(@"WBWebpageObject");
         setMediaObjectCommonParameter(ext, shareObject);
         [ext setValue:shareObject.URLStr forKey:@"webpageUrl"];
         [message setValue:ext forKey:@"mediaObject"];
     } else if (shareObject.messageType == HZShareMessageMusic) {
-        id ext = creatMediaObject(@"WBMusicObject");
+        id ext = creatWeiboMediaObject(@"WBMusicObject");
         setMediaObjectCommonParameter(ext, shareObject);
         [ext setValue:shareObject.URLStr forKey:@"musicUrl"];
         [message setValue:ext forKey:@"mediaObject"];
     } else if (shareObject.messageType == HZShareMessageVideo) {
-        id ext = creatMediaObject(@"WBVideoObject");
+        id ext = creatWeiboMediaObject(@"WBVideoObject");
         setMediaObjectCommonParameter(ext, shareObject);
         [ext setValue:shareObject.URLStr forKey:@"videoUrl"];
         [message setValue:ext forKey:@"mediaObject"];

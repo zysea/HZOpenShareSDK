@@ -17,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [HZTencentShare registerApp:@"222222" redirectURL:nil];
+//    [[TencentOAuth alloc] initWithAppId:@"222222" andDelegate:self];
     return YES;
 }
 
@@ -42,4 +44,22 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    //    return [HZShareSDK handleOpenURL:url];
+    BOOL isSuc = [HZTencentShare handleOpenURL:url];
+//    BOOL isSuc = [TencentOAuth HandleOpenURL:url];
+
+    NSLog(@"url %@ isSuc %d",url,isSuc == YES ? 1 : 0);
+
+    return isSuc;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    BOOL isSuc = [HZTencentShare handleOpenURL:url];
+//    BOOL isSuc = [TencentOAuth HandleOpenURL:url];
+    NSLog(@"url %@ isSuc %d",url,isSuc == YES ? 1 : 0);
+    return isSuc;
+}
 @end

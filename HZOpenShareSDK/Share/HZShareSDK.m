@@ -9,6 +9,8 @@
 #import "HZShareSDK.h"
 #import "HZWechatShare.h"
 #import "HZWeiboShare.h"
+#import "HZTencentShare.h"
+
 
 
 @implementation HZShareSDK
@@ -23,6 +25,10 @@
     if (weibo_flag) {
         return weibo_flag;
     }
+    BOOL tencent_flag = [HZTencentShare handleOpenURL:url];
+    if (tencent_flag) {
+        return tencent_flag;
+    }
     return NO;
 }
 
@@ -35,7 +41,7 @@
             break;
         case HZSharePlatformQQ:
         case HZSharePlatformQZone:
-            isSuccess = [HZWeiboShare sendMessage:shareObject controller:controller handler:handler];
+            isSuccess = [HZTencentShare sendMessage:shareObject controller:controller handler:handler];
             break;
         case HZSharePlatformWechatSession:
         case HZSharePlatformWechatTimeLine:

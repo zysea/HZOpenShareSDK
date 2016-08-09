@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <HZOpenShareSDK/HZOpenShareSDK.h>
+#import <TencentOpenAPI/TencentOAuth.h>
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

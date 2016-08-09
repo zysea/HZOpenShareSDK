@@ -11,6 +11,7 @@
 #import "HZShareObject.h"
 #import "HZWechatShare.h"
 #import "HZWeiboShare.h"
+#import "HZTencentShare.h"
 
 
 //! Project version number for HZOpenShareSDK.

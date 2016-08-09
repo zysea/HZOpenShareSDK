@@ -16,7 +16,7 @@
 
 + (BOOL)handleOpenURL:(NSURL *)url;
 
-+ (BOOL)registerApp:(NSString *)appKer redirectURL:(NSString *)url;
++ (BOOL)registerApp:(NSString *)appKey redirectURL:(NSString *)url;
 
 + (BOOL)sendMessage:(HZShareObject *)shareObject controller:(UIViewController *)controller handler:(void(^)(HZSharePlatformType platform,BOOL success,NSError *error))handler;
 

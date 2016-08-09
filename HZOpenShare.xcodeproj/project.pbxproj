@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		827FCBED1D59AD4C004EEB1B /* HZOpenShareTarget */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 827FCBEE1D59AD4C004EEB1B /* Build configuration list for PBXAggregateTarget "HZOpenShareTarget" */;
+			buildPhases = (
+				827FCBF11D59AD56004EEB1B /* ShellScript */,
+			);
+			dependencies = (
+				827FCBF91D59B3DF004EEB1B /* PBXTargetDependency */,
+			);
+			name = HZOpenShareTarget;
+			productName = HZOpenShareTarget;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		41D633D11D58D12D00AE87E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D633D01D58D12D00AE87E0 /* main.m */; };
 		41D633D41D58D12D00AE87E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D633D31D58D12D00AE87E0 /* AppDelegate.m */; };
@@ -24,10 +39,26 @@
 		41D634061D58D18400AE87E0 /* HZWechatShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D633FE1D58D18400AE87E0 /* HZWechatShare.m */; };
 		41D634071D58D18400AE87E0 /* HZWeiboShare.h in Headers */ = {isa = PBXBuildFile; fileRef = 41D633FF1D58D18400AE87E0 /* HZWeiboShare.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41D634081D58D18400AE87E0 /* HZWeiboShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D634001D58D18400AE87E0 /* HZWeiboShare.m */; };
+		827FCBE81D596AA0004EEB1B /* HZTencentShare.h in Headers */ = {isa = PBXBuildFile; fileRef = 827FCBE61D596AA0004EEB1B /* HZTencentShare.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		827FCBE91D596AA0004EEB1B /* HZTencentShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 827FCBE71D596AA0004EEB1B /* HZTencentShare.m */; };
+		827FCC081D59CDDD004EEB1B /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 827FCC061D59CDDD004EEB1B /* TencentOpenApi_IOS_Bundle.bundle */; };
+		827FCC091D59CDDD004EEB1B /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 827FCC071D59CDDD004EEB1B /* TencentOpenAPI.framework */; };
+		827FCC0B1D59CDF2004EEB1B /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 827FCC0A1D59CDF2004EEB1B /* libz.1.1.3.tbd */; };
+		827FCC0D1D59CDFC004EEB1B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 827FCC0C1D59CDFC004EEB1B /* libsqlite3.tbd */; };
+		827FCC0F1D59CE0D004EEB1B /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 827FCC0E1D59CE0D004EEB1B /* libstdc++.tbd */; };
+		827FCC111D59CE1E004EEB1B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 827FCC101D59CE1E004EEB1B /* MobileCoreServices.framework */; };
+		827FCC131D59CE26004EEB1B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 827FCC121D59CE26004EEB1B /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		41D633F01D58D16100AE87E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41D633C41D58D12D00AE87E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41D633EA1D58D16100AE87E0;
+			remoteInfo = HZOpenShareSDK;
+		};
+		827FCBF81D59B3DF004EEB1B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 41D633C41D58D12D00AE87E0 /* Project object */;
 			proxyType = 1;
@@ -72,6 +103,15 @@
 		41D633FE1D58D18400AE87E0 /* HZWechatShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZWechatShare.m; sourceTree = "<group>"; };
 		41D633FF1D58D18400AE87E0 /* HZWeiboShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZWeiboShare.h; sourceTree = "<group>"; };
 		41D634001D58D18400AE87E0 /* HZWeiboShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZWeiboShare.m; sourceTree = "<group>"; };
+		827FCBE61D596AA0004EEB1B /* HZTencentShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZTencentShare.h; sourceTree = "<group>"; };
+		827FCBE71D596AA0004EEB1B /* HZTencentShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZTencentShare.m; sourceTree = "<group>"; };
+		827FCC061D59CDDD004EEB1B /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		827FCC071D59CDDD004EEB1B /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		827FCC0A1D59CDF2004EEB1B /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
+		827FCC0C1D59CDFC004EEB1B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		827FCC0E1D59CE0D004EEB1B /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		827FCC101D59CE1E004EEB1B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		827FCC121D59CE26004EEB1B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +119,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				827FCC131D59CE26004EEB1B /* SystemConfiguration.framework in Frameworks */,
+				827FCC111D59CE1E004EEB1B /* MobileCoreServices.framework in Frameworks */,
+				827FCC0F1D59CE0D004EEB1B /* libstdc++.tbd in Frameworks */,
+				827FCC0D1D59CDFC004EEB1B /* libsqlite3.tbd in Frameworks */,
+				827FCC0B1D59CDF2004EEB1B /* libz.1.1.3.tbd in Frameworks */,
 				41D633F21D58D16100AE87E0 /* HZOpenShareSDK.framework in Frameworks */,
+				827FCC091D59CDDD004EEB1B /* TencentOpenAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +142,11 @@
 		41D633C31D58D12D00AE87E0 = {
 			isa = PBXGroup;
 			children = (
+				827FCC121D59CE26004EEB1B /* SystemConfiguration.framework */,
+				827FCC101D59CE1E004EEB1B /* MobileCoreServices.framework */,
+				827FCC0E1D59CE0D004EEB1B /* libstdc++.tbd */,
+				827FCC0C1D59CDFC004EEB1B /* libsqlite3.tbd */,
+				827FCC0A1D59CDF2004EEB1B /* libz.1.1.3.tbd */,
 				41D633CE1D58D12D00AE87E0 /* HZOpenShare */,
 				41D633EC1D58D16100AE87E0 /* HZOpenShareSDK */,
 				41D633CD1D58D12D00AE87E0 /* Products */,
@@ -114,6 +165,8 @@
 		41D633CE1D58D12D00AE87E0 /* HZOpenShare */ = {
 			isa = PBXGroup;
 			children = (
+				827FCC061D59CDDD004EEB1B /* TencentOpenApi_IOS_Bundle.bundle */,
+				827FCC071D59CDDD004EEB1B /* TencentOpenAPI.framework */,
 				41D633D21D58D12D00AE87E0 /* AppDelegate.h */,
 				41D633D31D58D12D00AE87E0 /* AppDelegate.m */,
 				41D633D51D58D12D00AE87E0 /* ViewController.h */,
@@ -156,6 +209,8 @@
 				41D633FE1D58D18400AE87E0 /* HZWechatShare.m */,
 				41D633FF1D58D18400AE87E0 /* HZWeiboShare.h */,
 				41D634001D58D18400AE87E0 /* HZWeiboShare.m */,
+				827FCBE61D596AA0004EEB1B /* HZTencentShare.h */,
+				827FCBE71D596AA0004EEB1B /* HZTencentShare.m */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -171,6 +226,7 @@
 				41D633EE1D58D16100AE87E0 /* HZOpenShareSDK.h in Headers */,
 				41D634051D58D18400AE87E0 /* HZWechatShare.h in Headers */,
 				41D634071D58D18400AE87E0 /* HZWeiboShare.h in Headers */,
+				827FCBE81D596AA0004EEB1B /* HZTencentShare.h in Headers */,
 				41D634011D58D18400AE87E0 /* HZShareObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,11 +282,12 @@
 				TargetAttributes = {
 					41D633CB1D58D12D00AE87E0 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 6P7D52U68K;
 					};
 					41D633EA1D58D16100AE87E0 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 6P7D52U68K;
+					};
+					827FCBED1D59AD4C004EEB1B = {
+						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
@@ -249,6 +306,7 @@
 			targets = (
 				41D633CB1D58D12D00AE87E0 /* HZOpenShare */,
 				41D633EA1D58D16100AE87E0 /* HZOpenShareSDK */,
+				827FCBED1D59AD4C004EEB1B /* HZOpenShareTarget */,
 			);
 		};
 /* End PBXProject section */
@@ -258,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				827FCC081D59CDDD004EEB1B /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				41D633DF1D58D12D00AE87E0 /* LaunchScreen.storyboard in Resources */,
 				41D633DC1D58D12D00AE87E0 /* Assets.xcassets in Resources */,
 				41D633DA1D58D12D00AE87E0 /* Main.storyboard in Resources */,
@@ -272,6 +331,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		827FCBF11D59AD56004EEB1B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset +u\n# Avoid recursively calling this script.\nif [[ $SF_MASTER_SCRIPT_RUNNING ]]\nthen\nexit 0\nfi\nset -u\nexport SF_MASTER_SCRIPT_RUNNING=1\n\nSF_TARGET_NAME=${PROJECT_NAME}\nSF_EXECUTABLE_PATH=\"${SF_TARGET_NAME}.framework/${SF_TARGET_NAME}\"\nSF_WRAPPER_NAME=\"${SF_TARGET_NAME}.framework\"\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nSF_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nSF_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SF_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nSF_OTHER_PLATFORM=iphonesimulator\nelse\nSF_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$SF_SDK_PLATFORM$ ]]\nthen\nSF_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${SF_OTHER_PLATFORM}\"\nelse\necho \"Could not find platform name from build products directory: $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\nrm -rf buildProducts\nmkdir buildProducts\n\n# Build the other platform.\nxcrun xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${SF_OTHER_PLATFORM}${SF_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\" SYMROOT=\"${SYMROOT}\" $ACTION\n\n# Smash the two static libraries into one fat binary and store it in the .framework\nxcrun lipo -create \"${BUILT_PRODUCTS_DIR}/$PRODUCT_NAME.framework/$PRODUCT_NAME\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/$PRODUCT_NAME.framework/$PRODUCT_NAME\" -output \"${PROJECT_DIR}/buildProducts/$PRODUCT_NAME\"\n\ncp -rf ${BUILT_PRODUCTS_DIR}/$PRODUCT_NAME.framework ${PROJECT_DIR}/buildProducts\nmv ${PROJECT_DIR}/buildProducts/$PRODUCT_NAME ${PROJECT_DIR}/buildProducts/$PRODUCT_NAME.framework\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		41D633C81D58D12D00AE87E0 /* Sources */ = {
@@ -288,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				827FCBE91D596AA0004EEB1B /* HZTencentShare.m in Sources */,
 				41D634081D58D18400AE87E0 /* HZWeiboShare.m in Sources */,
 				41D634061D58D18400AE87E0 /* HZWechatShare.m in Sources */,
 				41D634041D58D18400AE87E0 /* HZShareSDK.m in Sources */,
@@ -302,6 +378,11 @@
 			isa = PBXTargetDependency;
 			target = 41D633EA1D58D16100AE87E0 /* HZOpenShareSDK */;
 			targetProxy = 41D633F01D58D16100AE87E0 /* PBXContainerItemProxy */;
+		};
+		827FCBF91D59B3DF004EEB1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41D633EA1D58D16100AE87E0 /* HZOpenShareSDK */;
+			targetProxy = 827FCBF81D59B3DF004EEB1B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -413,9 +494,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HZOpenShare",
+				);
 				INFOPLIST_FILE = HZOpenShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hiram.HZOpenShare;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.111sdkDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -424,9 +512,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HZOpenShare",
+				);
 				INFOPLIST_FILE = HZOpenShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hiram.HZOpenShare;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.111sdkDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -434,6 +529,7 @@
 		41D633F51D58D16100AE87E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -455,6 +551,7 @@
 		41D633F61D58D16100AE87E0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -470,6 +567,20 @@
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		827FCBEF1D59AD4C004EEB1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		827FCBF01D59AD4C004EEB1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -492,6 +603,7 @@
 				41D633E51D58D12D00AE87E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41D633F41D58D16100AE87E0 /* Build configuration list for PBXNativeTarget "HZOpenShareSDK" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +612,16 @@
 				41D633F61D58D16100AE87E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		827FCBEE1D59AD4C004EEB1B /* Build configuration list for PBXAggregateTarget "HZOpenShareTarget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				827FCBEF1D59AD4C004EEB1B /* Debug */,
+				827FCBF01D59AD4C004EEB1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
