@@ -39,6 +39,17 @@
 		41D634061D58D18400AE87E0 /* HZWechatShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D633FE1D58D18400AE87E0 /* HZWechatShare.m */; };
 		41D634071D58D18400AE87E0 /* HZWeiboShare.h in Headers */ = {isa = PBXBuildFile; fileRef = 41D633FF1D58D18400AE87E0 /* HZWeiboShare.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41D634081D58D18400AE87E0 /* HZWeiboShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D634001D58D18400AE87E0 /* HZWeiboShare.m */; };
+		41D6340A1D5A0A8D00AE87E0 /* lindan.gif in Resources */ = {isa = PBXBuildFile; fileRef = 41D634091D5A0A8D00AE87E0 /* lindan.gif */; };
+		41D634141D5A0B4800AE87E0 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D6340B1D5A0B4800AE87E0 /* Icon@2x.png */; };
+		41D634151D5A0B4800AE87E0 /* micro_messenger.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D6340C1D5A0B4800AE87E0 /* micro_messenger.png */; };
+		41D634161D5A0B4800AE87E0 /* ML.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 41D6340D1D5A0B4800AE87E0 /* ML.pdf */; };
+		41D634171D5A0B4800AE87E0 /* res1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41D6340E1D5A0B4800AE87E0 /* res1.jpg */; };
+		41D634181D5A0B4800AE87E0 /* res2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41D6340F1D5A0B4800AE87E0 /* res2.jpg */; };
+		41D634191D5A0B4800AE87E0 /* res2.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D634101D5A0B4800AE87E0 /* res2.png */; };
+		41D6341A1D5A0B4800AE87E0 /* res3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41D634111D5A0B4800AE87E0 /* res3.jpg */; };
+		41D6341B1D5A0B4800AE87E0 /* res4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41D634121D5A0B4800AE87E0 /* res4.jpg */; };
+		41D6341C1D5A0B4800AE87E0 /* res5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41D634131D5A0B4800AE87E0 /* res5.jpg */; };
+		41D6341E1D5A0B5000AE87E0 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 41D6341D1D5A0B5000AE87E0 /* Icon.png */; };
 		827FCBE81D596AA0004EEB1B /* HZTencentShare.h in Headers */ = {isa = PBXBuildFile; fileRef = 827FCBE61D596AA0004EEB1B /* HZTencentShare.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		827FCBE91D596AA0004EEB1B /* HZTencentShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 827FCBE71D596AA0004EEB1B /* HZTencentShare.m */; };
 		827FCC081D59CDDD004EEB1B /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 827FCC061D59CDDD004EEB1B /* TencentOpenApi_IOS_Bundle.bundle */; };
@@ -103,6 +114,17 @@
 		41D633FE1D58D18400AE87E0 /* HZWechatShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZWechatShare.m; sourceTree = "<group>"; };
 		41D633FF1D58D18400AE87E0 /* HZWeiboShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZWeiboShare.h; sourceTree = "<group>"; };
 		41D634001D58D18400AE87E0 /* HZWeiboShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZWeiboShare.m; sourceTree = "<group>"; };
+		41D634091D5A0A8D00AE87E0 /* lindan.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lindan.gif; sourceTree = "<group>"; };
+		41D6340B1D5A0B4800AE87E0 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		41D6340C1D5A0B4800AE87E0 /* micro_messenger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = micro_messenger.png; sourceTree = "<group>"; };
+		41D6340D1D5A0B4800AE87E0 /* ML.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ML.pdf; sourceTree = "<group>"; };
+		41D6340E1D5A0B4800AE87E0 /* res1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = res1.jpg; sourceTree = "<group>"; };
+		41D6340F1D5A0B4800AE87E0 /* res2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = res2.jpg; sourceTree = "<group>"; };
+		41D634101D5A0B4800AE87E0 /* res2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = res2.png; sourceTree = "<group>"; };
+		41D634111D5A0B4800AE87E0 /* res3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = res3.jpg; sourceTree = "<group>"; };
+		41D634121D5A0B4800AE87E0 /* res4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = res4.jpg; sourceTree = "<group>"; };
+		41D634131D5A0B4800AE87E0 /* res5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = res5.jpg; sourceTree = "<group>"; };
+		41D6341D1D5A0B5000AE87E0 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		827FCBE61D596AA0004EEB1B /* HZTencentShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZTencentShare.h; sourceTree = "<group>"; };
 		827FCBE71D596AA0004EEB1B /* HZTencentShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZTencentShare.m; sourceTree = "<group>"; };
 		827FCC061D59CDDD004EEB1B /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
@@ -165,6 +187,16 @@
 		41D633CE1D58D12D00AE87E0 /* HZOpenShare */ = {
 			isa = PBXGroup;
 			children = (
+				41D6341D1D5A0B5000AE87E0 /* Icon.png */,
+				41D6340B1D5A0B4800AE87E0 /* Icon@2x.png */,
+				41D6340C1D5A0B4800AE87E0 /* micro_messenger.png */,
+				41D6340D1D5A0B4800AE87E0 /* ML.pdf */,
+				41D6340E1D5A0B4800AE87E0 /* res1.jpg */,
+				41D6340F1D5A0B4800AE87E0 /* res2.jpg */,
+				41D634101D5A0B4800AE87E0 /* res2.png */,
+				41D634111D5A0B4800AE87E0 /* res3.jpg */,
+				41D634121D5A0B4800AE87E0 /* res4.jpg */,
+				41D634131D5A0B4800AE87E0 /* res5.jpg */,
 				827FCC061D59CDDD004EEB1B /* TencentOpenApi_IOS_Bundle.bundle */,
 				827FCC071D59CDDD004EEB1B /* TencentOpenAPI.framework */,
 				41D633D21D58D12D00AE87E0 /* AppDelegate.h */,
@@ -173,6 +205,7 @@
 				41D633D61D58D12D00AE87E0 /* ViewController.m */,
 				41D633D81D58D12D00AE87E0 /* Main.storyboard */,
 				41D633DB1D58D12D00AE87E0 /* Assets.xcassets */,
+				41D634091D5A0A8D00AE87E0 /* lindan.gif */,
 				41D633DD1D58D12D00AE87E0 /* LaunchScreen.storyboard */,
 				41D633E01D58D12D00AE87E0 /* Info.plist */,
 				41D633CF1D58D12D00AE87E0 /* Supporting Files */,
@@ -282,9 +315,11 @@
 				TargetAttributes = {
 					41D633CB1D58D12D00AE87E0 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 6P7D52U68K;
 					};
 					41D633EA1D58D16100AE87E0 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 6P7D52U68K;
 					};
 					827FCBED1D59AD4C004EEB1B = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -316,10 +351,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41D634151D5A0B4800AE87E0 /* micro_messenger.png in Resources */,
+				41D634181D5A0B4800AE87E0 /* res2.jpg in Resources */,
+				41D6340A1D5A0A8D00AE87E0 /* lindan.gif in Resources */,
+				41D634141D5A0B4800AE87E0 /* Icon@2x.png in Resources */,
+				41D6341A1D5A0B4800AE87E0 /* res3.jpg in Resources */,
+				41D6341B1D5A0B4800AE87E0 /* res4.jpg in Resources */,
 				827FCC081D59CDDD004EEB1B /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				41D634191D5A0B4800AE87E0 /* res2.png in Resources */,
+				41D634171D5A0B4800AE87E0 /* res1.jpg in Resources */,
 				41D633DF1D58D12D00AE87E0 /* LaunchScreen.storyboard in Resources */,
+				41D6341C1D5A0B4800AE87E0 /* res5.jpg in Resources */,
 				41D633DC1D58D12D00AE87E0 /* Assets.xcassets in Resources */,
+				41D6341E1D5A0B5000AE87E0 /* Icon.png in Resources */,
 				41D633DA1D58D12D00AE87E0 /* Main.storyboard in Resources */,
+				41D634161D5A0B4800AE87E0 /* ML.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,7 +549,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.111sdkDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiram.shareSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -521,7 +567,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.111sdkDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiram.shareSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

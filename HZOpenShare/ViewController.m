@@ -25,14 +25,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)sendMessage:(id)sender {
     HZShareObject *object = [HZShareObject object];
-    object.platformType = HZSharePlatformQQ;
+    object.platformType = HZSharePlatformQZone;
     object.text = @"test test test test";
     object.title = @"test test test test";
     object.messageType = HZShareMessageText;
-    object.thumbImage = [UIImage imageNamed:@"表情包-收藏按钮-icon"];
-    object.URLStr = @"http://www.baidu.com";
+    object.thumbImage = [UIImage imageNamed:@"Icon"];
+    NSString *filePath = [[NSBundle mainBundle]pathForResource:@"lindan" ofType:@"gif"];
+    object.data = [NSData dataWithContentsOfFile:filePath];
+
+    object.URLStr = @"http://y.qq.com/i/song.html?songid=432451&source=mobileQQ%23wechat_redirect";
     [HZTencentShare sendMessage:object controller:self handler:nil];
 
 //    QQApiTextObject* txtObj = [QQApiTextObject objectWithText:@"text"];

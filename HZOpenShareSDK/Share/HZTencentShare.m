@@ -40,7 +40,6 @@ bool isSucess(int sent){
     }
     return NO;
 }
-// 创建 QQApiSendResultCode
 int sendReq(id Obj)
 {
     Class QQApiInterface = NSClassFromString(@"QQApiInterface");
@@ -54,7 +53,7 @@ int sendReq(id Obj)
 int sendReqToQZone(id Obj)
 {
     Class QQApiInterface = NSClassFromString(@"QQApiInterface");
-    SEL selector = NSSelectorFromString(@"sendReqToQZone:");
+    SEL selector = NSSelectorFromString(@"SendReqToQZone:");
     IMP imp = [QQApiInterface methodForSelector:selector];
     int (*send)(id,SEL,id) = (int(*)(id,SEL,id))imp;
     return send(QQApiInterface,selector,Obj);
@@ -69,7 +68,7 @@ id creatMediaObject(HZShareObject *shareObject)
            if (shareObject.platformType ==HZSharePlatformQQ) {
                mediaObject = creatQQTextObject(shareObject);
            } else {
-               mediaObject = creatImageObject(shareObject);
+               mediaObject = creatQZoneImageObject(shareObject);
            }
         }
             break;
@@ -120,7 +119,7 @@ id creatImageObject(HZShareObject *shareObject){
     NSData *data = UIImagePNGRepresentation(shareObject.thumbImage);
     id obj = create(QQApiImageObject,sel,shareObject.data,data,shareObject.title,shareObject.description);
     if (shareObject.platformType == HZSharePlatformQZone && shareObject.messageType==HZShareMessageText) {
-        create(QQApiImageObject,sel,nil,nil,nil,shareObject.description);
+       obj = create(QQApiImageObject,sel,nil,nil,nil,shareObject.description);
     }
     return obj;
 }
@@ -133,6 +132,21 @@ id createWebpageObject(HZShareObject *shareObject){
     NSData *data = UIImagePNGRepresentation(shareObject.thumbImage);
     NSURL *url = [NSURL URLWithString:shareObject.URLStr];
     id obj = create(QQApiImageObject,sel,url,shareObject.title,shareObject.description,data);
+    return obj;
+}
+
+
+id creatQZoneImageObject(HZShareObject *shareObject){
+    
+    Class QQApiImageObject = NSClassFromString(@"QQApiImageArrayForQZoneObject");
+    SEL sel = NSSelectorFromString(@"objectWithimageDataArray:title:");
+    IMP imp = [QQApiImageObject methodForSelector:sel];
+    id (*create)(id,SEL,id,id) = (id(*)(id,SEL,id,id))imp;
+    
+    id obj = create(QQApiImageObject,sel,@[shareObject.data],shareObject.text);
+    if (shareObject.platformType == HZSharePlatformQZone && shareObject.messageType==HZShareMessageText) {
+        obj = create(QQApiImageObject,sel,nil,shareObject.text);
+    }
     return obj;
 }
 
@@ -169,7 +183,6 @@ id createFileObject(HZShareObject *shareObject){
     if (fileData == nil) {
         NSURL *url = [NSURL URLWithString:shareObject.URLStr];
         fileData = [NSData dataWithContentsOfURL:url];
-
     }
     id obj = create(QQApiImageObject,sel,fileData,data,shareObject.title,shareObject.description);
     return obj;
@@ -218,7 +231,10 @@ id createFileObject(HZShareObject *shareObject){
 
 + (BOOL) sendMessage:(HZShareObject *)shareObject controller:(UIViewController *)controller handler:(void (^)(HZSharePlatformType, BOOL, NSError *))handler
 {
-    return [[self shareIntance]sendMessage:shareObject controller:controller handler:handler];
+    if (shareObject.platformType == HZSharePlatformQQ || shareObject.platformType == HZSharePlatformQZone ) {
+        return [[self shareIntance]sendMessage:shareObject controller:controller handler:handler];
+    }
+    return NO;
 }
 
 - (BOOL)sendMessage:(HZShareObject *)shareObject controller:(UIViewController *)controller handler:(void (^)(HZSharePlatformType, BOOL, NSError *))handler
@@ -232,7 +248,12 @@ id createFileObject(HZShareObject *shareObject){
     if (req == nil) {
         return NO;
     }
-    int sent = sendReq(req);
+    int sent = -1;
+    if (shareObject.platformType == HZSharePlatformQZone) {
+        sent = sendReqToQZone(req);
+    } else {
+        sent = sendReq(req);
+    }
     return  isSucess(sent);
 }
 

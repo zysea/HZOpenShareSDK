@@ -81,7 +81,6 @@
     SEL selector = NSSelectorFromString(@"sendRequest:");
     IMP imp = [class methodForSelector:selector];
     BOOL (*sendMessage)(id,SEL,id) = (BOOL (*)(id,SEL,id))imp;
-
    return sendMessage(class,selector,request);
 }
 
@@ -100,6 +99,9 @@
 - (BOOL)handleOpenURl:(NSURL *)url
 {
     Class WeiboSDK = NSClassFromString(@"WeiboSDK");
+    if (WeiboSDK==nil) {
+        return NO;
+    }
     SEL seletor = NSSelectorFromString(@"handleOpenURL:delegate:");
     IMP imp = [WeiboSDK methodForSelector:seletor];
     BOOL(*func)(id,SEL,NSURL *,id) = (BOOL(*)(id,SEL,NSURL *,id)) imp;

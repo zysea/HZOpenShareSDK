@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>HZOpenShareTarget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>41D633EA1D58D16100AE87E0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>827FCBED1D59AD4C004EEB1B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -243,6 +243,9 @@ id createMediaMessage(HZShareObject *shareObject)
 - (BOOL)handleOpenURL:(NSURL *)url
 {
     Class class = NSClassFromString(@"WXApi");
+    if (class == nil) {
+        return NO;
+    }
     SEL selector = NSSelectorFromString(@"handleOpenURL:delegate:");
     IMP imp = [class methodForSelector:selector];
     BOOL (*func)(id,SEL,NSURL*,id);

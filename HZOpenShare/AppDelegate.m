@@ -46,9 +46,7 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    //    return [HZShareSDK handleOpenURL:url];
     BOOL isSuc = [HZTencentShare handleOpenURL:url];
-//    BOOL isSuc = [TencentOAuth HandleOpenURL:url];
 
     NSLog(@"url %@ isSuc %d",url,isSuc == YES ? 1 : 0);
 
@@ -57,7 +55,7 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    BOOL isSuc = [HZTencentShare handleOpenURL:url];
+    BOOL isSuc = [HZShareSDK handleOpenURL:url];
 //    BOOL isSuc = [TencentOAuth HandleOpenURL:url];
     NSLog(@"url %@ isSuc %d",url,isSuc == YES ? 1 : 0);
     return isSuc;
