@@ -40,7 +40,7 @@ bool isSucess(int sent){
     }
     return NO;
 }
-int sendReq(id Obj)
+int sendQQReq(id Obj)
 {
     Class QQApiInterface = NSClassFromString(@"QQApiInterface");
     SEL selector = NSSelectorFromString(@"sendReq:");
@@ -75,20 +75,20 @@ id creatMediaObject(HZShareObject *shareObject)
         case HZShareMessageImage:
         case HZShareMessageGifImage:
         case HZShareMessagetEmoticon:
-            mediaObject = creatImageObject(shareObject);
+            mediaObject = creatQQImageObject(shareObject);
             break;
         case HZShareMessageMusic:
-            mediaObject = createAudioObject(shareObject);
+            mediaObject = createQQAudioObject(shareObject);
             break;
         case HZShareMessageVideo:
-            mediaObject = createVideoObject(shareObject);
+            mediaObject = createQQVideoObject(shareObject);
             break;
         case HZShareMessageFile:
-            mediaObject = createFileObject(shareObject);
+            mediaObject = createQQFileObject(shareObject);
             break;
         case HZShareMessageApp:
         case HZShareMessageWebpage:
-            mediaObject = createWebpageObject(shareObject);
+            mediaObject = createQQWebpageObject(shareObject);
             break;
         default:
             break;
@@ -110,7 +110,7 @@ id creatQQTextObject(HZShareObject *shareObject)
     return obj;
 }
 
-id creatImageObject(HZShareObject *shareObject){
+id creatQQImageObject(HZShareObject *shareObject){
 
     Class QQApiImageObject = NSClassFromString(@"QQApiImageObject");
     SEL sel = NSSelectorFromString(@"objectWithData:previewImageData:title:description:");
@@ -124,7 +124,7 @@ id creatImageObject(HZShareObject *shareObject){
     return obj;
 }
 
-id createWebpageObject(HZShareObject *shareObject){
+id createQQWebpageObject(HZShareObject *shareObject){
     Class QQApiImageObject = NSClassFromString(@"QQApiNewsObject");
     SEL sel = NSSelectorFromString(@"objectWithURL:title:description:previewImageData:");
     IMP imp = [QQApiImageObject methodForSelector:sel];
@@ -150,7 +150,7 @@ id creatQZoneImageObject(HZShareObject *shareObject){
     return obj;
 }
 
-id createAudioObject(HZShareObject *shareObject){
+id createQQAudioObject(HZShareObject *shareObject){
     Class QQApiImageObject = NSClassFromString(@"QQApiAudioObject");
     SEL sel = NSSelectorFromString(@"objectWithURL:title:description:previewImageData:");
     IMP imp = [QQApiImageObject methodForSelector:sel];
@@ -161,7 +161,7 @@ id createAudioObject(HZShareObject *shareObject){
     return obj;
 }
 
-id createVideoObject(HZShareObject *shareObject){
+id createQQVideoObject(HZShareObject *shareObject){
     Class QQApiImageObject = NSClassFromString(@"QQApiNewsObject");
     SEL sel = NSSelectorFromString(@"objectWithURL:title:description:previewImageData:");
     IMP imp = [QQApiImageObject methodForSelector:sel];
@@ -172,7 +172,7 @@ id createVideoObject(HZShareObject *shareObject){
     return obj;
 }
 
-id createFileObject(HZShareObject *shareObject){
+id createQQFileObject(HZShareObject *shareObject){
     Class QQApiImageObject = NSClassFromString(@"QQApiFileObject");
     SEL sel = NSSelectorFromString(@"objectWithData:previewImageData:title:description:");
     IMP imp = [QQApiImageObject methodForSelector:sel];
@@ -252,24 +252,11 @@ id createFileObject(HZShareObject *shareObject){
     if (shareObject.platformType == HZSharePlatformQZone) {
         sent = sendReqToQZone(req);
     } else {
-        sent = sendReq(req);
+        sent = sendQQReq(req);
     }
     return  isSucess(sent);
 }
 
-- (void)sendMessage
-{
-    id mediaObject = creatMediaObject(_shareObject);
-    if (mediaObject == nil) {
-        return;
-    }
-    id req = createQQRed(mediaObject);
-    if (req == nil) {
-        return;
-    }
-    int sent = sendReq(req);
-    NSLog(@"sent--->>%d",sent);
-}
 
 - (BOOL)registerApp:(NSString *)appKey redirectURL:(NSString *)url
 {
@@ -299,7 +286,6 @@ id createFileObject(HZShareObject *shareObject){
 
 - (void)tencentDidLogin
 {
-    [self sendMessage];
     NSLog(@"tencentDidLogin >>> login success");
 }
 - (void)tencentDidNotLogin:(BOOL)cancelled

@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import <HZOpenShareSDK/HZOpenShareSDK.h>
-#import <TencentOpenAPI/QQApiInterface.h>
 
 @interface ViewController ()
 
@@ -28,16 +27,19 @@
 
 - (IBAction)sendMessage:(id)sender {
     HZShareObject *object = [HZShareObject object];
-    object.platformType = HZSharePlatformQZone;
+    object.platformType = HZSharePlatformWechatSession;
     object.text = @"test test test test";
     object.title = @"test test test test";
-    object.messageType = HZShareMessageText;
+    object.messageType = HZShareMessageWebpage;
     object.thumbImage = [UIImage imageNamed:@"Icon"];
     NSString *filePath = [[NSBundle mainBundle]pathForResource:@"lindan" ofType:@"gif"];
     object.data = [NSData dataWithContentsOfFile:filePath];
 
     object.URLStr = @"http://y.qq.com/i/song.html?songid=432451&source=mobileQQ%23wechat_redirect";
-    [HZTencentShare sendMessage:object controller:self handler:nil];
+    [HZWechatShare sendObject:object handle:^(HZSharePlatformType platform, BOOL success, NSError *error) {
+
+    }];
+
 
 //    QQApiTextObject* txtObj = [QQApiTextObject objectWithText:@"text"];
 //    SendMessageToQQReq* req = [SendMessageToQQReq reqWithContent:txtObj];

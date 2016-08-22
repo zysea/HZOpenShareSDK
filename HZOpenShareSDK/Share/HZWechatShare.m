@@ -204,16 +204,16 @@ id createMediaMessage(HZShareObject *shareObject)
 
 - (BOOL)sendWebContent:(HZShareObject *)shareObject
 {
-    id message =  createMediaMessage(shareObject);
-    
-    [message setValue:shareObject.title forKey:@"title"];
-    [message setValue:shareObject.description forKey:@"description"];
-    
     id ext = createMediaObject(@"WXWebpageObject");
     [ext setValue:shareObject.URLStr forKey:@"webpageUrl"];
+
+    id message =  createMediaMessage(shareObject);
+    [message setValue:shareObject.title forKey:@"title"];
+    [message setValue:shareObject.description forKey:@"description"];
     [message setValue:ext forKey:@"mediaObject"];
-    
-    return [self sendMessage:ext bText:NO];
+
+
+    return [self sendMessage:message bText:NO];
     
 }
 
