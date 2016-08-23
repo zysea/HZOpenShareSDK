@@ -9,6 +9,10 @@
 #import "HZWeiboShare.h"
 
 @interface HZWeiboShare ()
+{
+@private
+    void(^_handler)(HZSharePlatformType platform,BOOL success,NSError *error);
+}
 
 @property (nonatomic ,strong) NSString *wbtoken;
 
@@ -17,6 +21,7 @@
 @property (nonatomic ,strong) NSString *wbRefreshToken;
 
 @property (nonatomic ,strong) NSString *redirectURL;
+
 
 
 @end
@@ -59,7 +64,49 @@
         if (userID) {
             self.wbCurrentUserID = userID;
         }
-        NSLog(@"status %ld",(long)status);
+        switch (status) {
+            case 0:
+                if(_handler){
+                    _handler(HZSharePlatformWeibo,YES,nil);
+                }
+                break;
+            case -1:
+                if(_handler){
+                    NSError *error = [NSError errorWithDomain:@"用户取消发送" code:-1 userInfo:@{@"msg":@"用户取消发送",@"code":@"-1"}];
+                    _handler(HZSharePlatformWeibo,NO,error);
+                }
+                break;
+            case -2:
+                if(_handler){
+                    NSError *error = [NSError errorWithDomain:@"发送失败" code:-2 userInfo:@{@"msg":@"发送失败",@"code":@"-2"}];
+                    _handler(HZSharePlatformWeibo,NO,error);
+                }
+                break;
+            case -3:
+                if(_handler){
+                    NSError *error = [NSError errorWithDomain:@"授权失败" code:-3 userInfo:@{@"msg":@"发送失败",@"code":@"-3"}];
+                    _handler(HZSharePlatformWeibo,NO,error);
+                }
+                break;
+            case -4:
+                if(_handler){
+                    NSError *error = [NSError errorWithDomain:@"用户取消安装微博客户端" code:-5 userInfo:@{@"msg":@"用户取消安装微博客户端",@"code":@"-4"}];
+                    _handler(HZSharePlatformWeibo,NO,error);
+                }
+                break;
+            case -5:
+                if(_handler){
+                    NSError *error = [NSError errorWithDomain:@"分享失败" code:-5 userInfo:@{@"msg":@"分享失败",@"code":@"-5"}];
+                    _handler(HZSharePlatformWeibo,NO,error);
+                }
+                break;
+
+            default:
+                if (_handler) {
+                    _handler(HZSharePlatformWeibo,NO,nil);
+                }
+                break;
+        }
 
     } else if ([response isKindOfClass:[WBAuthorizeResponse class]]) {
 

@@ -9,11 +9,14 @@
 #import "HZTencentShare.h"
 
 @interface HZTencentShare ()
-
+{
+    @private
+    void(^_handler)(HZSharePlatformType platform,BOOL success,NSError *error);
+}
 @property (nonatomic ,strong) id tencentOAuth;
 @property (nonatomic ,strong) id appKey;
 @property (nonatomic ,strong) id redirectURL;
-@property (nonatomic ,strong) id shareObject;
+@property (nonatomic ,strong) HZShareObject* shareObject;
 
 @end
 
@@ -239,6 +242,7 @@ id createQQFileObject(HZShareObject *shareObject){
 
 - (BOOL)sendMessage:(HZShareObject *)shareObject controller:(UIViewController *)controller handler:(void (^)(HZSharePlatformType, BOOL, NSError *))handler
 {
+    _handler = handler;
     _shareObject = shareObject;
     id mediaObject = creatMediaObject(shareObject);
     if (mediaObject == nil) {
@@ -297,4 +301,85 @@ id createQQFileObject(HZShareObject *shareObject){
 {
 
 }
+- (void)handleSendResult:(NSInteger)sendResult
+{
+    switch (sendResult)
+    {
+        case 6:
+        {
+        if (_handler) {
+            NSError *error = [NSError errorWithDomain:@"app 未注册" code:6 userInfo:@{@"msg":@"app 未注册",@"code":@"6"}];
+            _handler(self.shareObject.platformType,NO,error);
+        }
+        NSLog(@"app 未注册");
+
+        break;
+        }
+        case 3:
+        case 4:
+        case 5:
+        {
+        if (_handler) {
+            NSString *code = [NSString stringWithFormat:@"%ld",(long)sendResult];
+            NSError *error = [NSError errorWithDomain:@"参数错误" code:sendResult userInfo:@{@"msg":@"参数错误",@"code":code}];
+            _handler(self.shareObject.platformType,NO,error);
+        }
+        NSLog(@"参数错误");
+        break;
+        }
+        case 1:
+        {
+        if (_handler) {
+            NSError *error = [NSError errorWithDomain:@"未安装手Q" code:1 userInfo:@{@"msg":@"未安装手Q",@"code":@"5"}];
+            _handler(self.shareObject.platformType,NO,error);
+        }
+        NSLog(@"未安装手Q");
+        break;
+        }
+        case 2:
+        {
+        if (_handler) {
+            NSError *error = [NSError errorWithDomain:@"API接口不支持" code:2 userInfo:@{@"msg":@"API接口不支持",@"code":@"2"}];
+            _handler(self.shareObject.platformType,NO,error);
+        }
+        NSLog(@"API接口不支持");
+        break;
+        }
+        case -1:
+        {
+        if (_handler) {
+            NSError *error = [NSError errorWithDomain:@"发送失败" code:-1 userInfo:@{@"msg":@"发送失败",@"code":@"-1"}];
+            _handler(self.shareObject.platformType,NO,error);
+        }
+        NSLog(@"发送失败");
+        break;
+        }
+        case 1002:
+        {
+        if (_handler) {
+            NSError *error = [NSError errorWithDomain:@"当前QQ版本太低，需要更新" code:1002 userInfo:@{@"msg":@"当前QQ版本太低，需要更新",@"code":@"1002"}];
+            _handler(self.shareObject.platformType,NO,error);
+        }
+        NSLog(@"当前QQ版本太低，需要更新");
+        break;
+        }
+        case 0:
+        {
+        if (_handler) {
+            _handler(self.shareObject.platformType,YES,nil);
+        }
+
+        NSLog(@"发送成功");
+        break;
+        }
+        default:
+        {
+        if (_handler) {
+            _handler(HZSharePlatformWeibo,NO,nil);
+        }
+        break;
+        }
+    }
+}
+
 @end

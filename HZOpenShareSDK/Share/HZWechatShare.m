@@ -10,7 +10,10 @@
 
 
 @interface HZWechatShare ()
-
+{
+@private
+    void(^_handler)(HZSharePlatformType platform,BOOL success,NSError *error);
+}
 @property (nonatomic ,strong) HZShareHandler hander;
 @property (nonatomic ,strong) HZShareObject *shareObject;
 @property (nonatomic ,assign) int scene;
@@ -256,10 +259,64 @@ id createMediaMessage(HZShareObject *shareObject)
 
 -(void) onReq:(id)req
 {
-    NSLog(@"req %@",req);
+//    NSLog(@"req %@",req);
 }
 -(void) onResp:(id)resp
 {
+    SEL selector = NSSelectorFromString(@"errCode");
+    IMP imp = [resp methodForSelector:selector];
+    NSInteger (*func)(id,SEL);
+    func = (NSInteger(*)(id,SEL))imp;
+    NSInteger code = func(resp,selector);
+    switch (code) {
+        case 0:{
+            if (_handler) {
+                _handler(self.shareObject.platformType,YES,nil);
+                break;
+            }
+        }
+        case -1:{
+            if (_handler) {
+                NSError *error = [NSError errorWithDomain:@"分享失败" code:-1 userInfo:@{@"msg":@"分享失败",@"code":@"-1"}];
+                _handler(self.shareObject.platformType,NO,error);
+                break;
+            }
+        }
+        case -2:{
+            if (_handler) {
+                NSError *error = [NSError errorWithDomain:@"分享失败" code:-2 userInfo:@{@"msg":@"分享失败",@"code":@"-2"}];
+                _handler(self.shareObject.platformType,NO,error);
+                break;
+            }
+        }
+        case -3:{
+            if (_handler) {
+                NSError *error = [NSError errorWithDomain:@"分享失败" code:-3 userInfo:@{@"msg":@"分享失败",@"code":@"-3"}];
+                _handler(self.shareObject.platformType,NO,error);
+                break;
+            }
+        }
+        case -4:{
+            if (_handler) {
+                NSError *error = [NSError errorWithDomain:@"授权失败" code:-4 userInfo:@{@"msg":@"分享失败",@"code":@"-4"}];
+                _handler(self.shareObject.platformType,NO,error);
+                break;
+            }
+        }
+        case -5:{
+            if (_handler) {
+                NSError *error = [NSError errorWithDomain:@"不支持分享" code:-5 userInfo:@{@"msg":@"不支持分享",@"code":@"-4"}];
+                _handler(self.shareObject.platformType,NO,error);
+                break;
+            }
+        }
+
+        default:
+            if (_handler) {
+                _handler(HZSharePlatformWeibo,NO,nil);
+            }
+            break;
+    }
     NSLog(@"resp %@",resp);
 }
 @end
